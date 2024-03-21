@@ -11,6 +11,8 @@
     <!--das ist der link zu der website wo wir auf fontanwesome referieren für das Icon das wir verwenden, das haben wir beim Bild in der figcaption hingetan das camera icon, in der figcaption haben wird den
     Link von fontawesome kopiert-->
     <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 </head>
 <script> src = "main.js"</script>
@@ -54,6 +56,9 @@
                 </figcaption>
             </figure>
 
+            <h3>Übersichtskarte</h3>
+            <div id="map" style="width:90%;height:600px"></div>
+
             <h3>Links in einer Liste</h3>
 
             <ul>
@@ -65,17 +70,20 @@
                         href="https://www.tripadvisor.com/Attraction_Review-g255124-d273470-Reviews-Doubtful_Sound-Te_Anau_Fiordland_National_Park_Southland_Region_South">tripadvisor</a>
                 </li>
             </ul>
-        </article>
 
+
+
+        </article>
+        <footer> <!--footer ist die Fußzeile-->
+            <nav>
+                <a href="https://sophiest01.github.io/nz"><i class="fa-solid fa-plane-departure"></i> previous stage</a>
+                <a href="https://Johanna135.github.io/nz"><i class="fa-solid fa-plane-arrival"></i> this stage <i
+                        class="fa-solid fa-plane-departure"></i></a>
+                <a href="https://sgefelix.github.io/nz">next stage <i class="fa-solid fa-plane"></i></a>
+            </nav>
+        </footer>
     </main>
-    <footer> <!--footer ist die Fußzeile-->
-        <nav>
-            <a href="https://sophiest01.github.io/nz"><i class="fa-solid fa-plane-departure"></i> previous stage</a>
-            <a href="https://Johanna135.github.io/nz"><i class="fa-solid fa-plane-arrival"></i> this stage <i
-                    class="fa-solid fa-plane-departure"></i></a>
-            <a href="https://sgefelix.github.io/nz">next stage <i class="fa-solid fa-plane"></i></a>
-        </nav>
-    </footer>
+
 </body>
 
 </html>
