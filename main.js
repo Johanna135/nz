@@ -17,17 +17,34 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-let marker = L.marker([lat, lng]).addTo(map);
-marker.bindPopup(`
-    Doubtfull Sound
-    <ul>
-        <li>Breite: ${lat.toFixed(5)}</li>
-        <li>Länge: ${lng.toFixed(5)}</li>
-    </ul>
-`).openPopup();
 
 //Maßstab zur Karte hinzufügen
 L.control.scale({ metric: true, imperial: false }).addTo(map);
+
+// wir machen hier ein GeoJson ( ist so ähnlich wie shp aber als text)
+// wir machen das, damit wir dieses für alle Positionen anwenden können
+// Koordinaten sind x, y also lng,lat
+let jsonPunkt = {
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [lng, lat]
+    },
+    "properties": {
+        "name": "Doubtful Sound"
+    }
+}
+
+L.geoJSON(jsonPunkt, {
+}).bindPopup(function (layer) {
+    return `
+    ${layer.feature.properties.name} 
+    <ul>
+        <li>Breite: ${layer.feature.geometry.coordinates[1].toFixed(5)}</li>
+        <li>Länge: ${layer.feature.geometry.coordinates[0].toFixed(5)}</li>
+    </ul>
+`; //wir haben immer layer.feature.geometry.coordinates .... auf das definierte jsonPunkt zugegriffen
+}).addTo(map);
 
 
 
@@ -44,3 +61,4 @@ console.log(`Test
 <p>${absatz}</p>
 <p>Nummer plus 1 = ${nummer + 1}</p>`);
 */
+
