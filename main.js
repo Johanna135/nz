@@ -4,7 +4,13 @@ let lng = 166.983333;
 //Zoomfaktor als Variable definieren
 let zoom = 11;
 
-let map = L.map('map').setView([lat, lng], zoom);
+//großes L --> Leaflet im Spiel
+// geschwungene Klammern sind hier Object literals, innen drinnen sind keywords mit Werten, diese sind durch kommas getrennt.
+// erstes Key Value pair ist center mit lat,lng das zweite ist zoom mit zoom. Änlich wie dictionary in Python --> Key Value pairs
+let map = L.map('map', {
+    center: [lat, lng],
+    zoom: zoom
+});
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
