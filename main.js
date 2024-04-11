@@ -26,6 +26,9 @@ marker.bindPopup(`
     </ul>
 `).openPopup();
 
+//Maßstab zur Karte hinzufügen
+L.control.scale({ metric: true, imperial: false }).addTo(map);
+
 
 
 /* Beispiel
