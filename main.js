@@ -12,7 +12,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 let marker = L.marker([lat, lng]).addTo(map);
-marker.bindPopup("<b>popup</b><br>popup").openPopup();
+marker.bindPopup(`
+    <h2>Doubtfull Sound</h2>
+    <br>
+    <ul>
+        <li>Breite: ${lat}</li>
+        <li>Länge: ${lng}</li>
+    </ul>
+    `).openPopup();
 
 
 
