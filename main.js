@@ -1,8 +1,10 @@
 // Definition der Koordinaten latidute und longitude
 let lat = -45.316667;
 let lng = 166.983333;
+//Zoomfaktor als Variable definieren
+let zoom = 11;
 
-let map = L.map('map').setView([lat, lng], 13);
+let map = L.map('map').setView([lat, lng], zoom);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
