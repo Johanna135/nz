@@ -1,12 +1,15 @@
+// Definition der Koordinaten latidute und longitude
+let lat = -45.316667;
+let lng = 166.983333;
 
-let map = L.map('map').setView([-45.316667, 166.983333], 13);
+let map = L.map('map').setView([lat, lng], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-let marker = L.marker([-45.316667, 166.983333]).addTo(map);
+let marker = L.marker([lat, lng]).addTo(map);
 marker.bindPopup("<b>popup</b><br>popup").openPopup();
 
 
