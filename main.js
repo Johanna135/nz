@@ -293,11 +293,14 @@ let jsondata = {
 
 L.geoJSON(jsondata, {
 }).bindPopup(function (layer) {
+    console.log(layer.feature.properties)
     return `
     ${layer.feature.properties.name} 
     <ul>
         <li>Breite: ${layer.feature.geometry.coordinates[1].toFixed(5)}</li>
         <li>Länge: ${layer.feature.geometry.coordinates[0].toFixed(5)}</li>
+        <li> Quelle: <a href =${layer.feature.properties.wikipedia}>Wikipedia</a></li>
+        <li><a href = "https://${layer.feature.properties.user}.github.io/nz">Etappenseite</a></li>
     </ul>
 `; //wir haben immer layer.feature.geometry.coordinates .... auf das definierte jsonPunkt zugegriffen
 }).addTo(map);
